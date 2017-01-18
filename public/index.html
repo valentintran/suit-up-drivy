@@ -1,33 +1,88 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
-  </body>
+	<head>
+		<title>Drivy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>Drivy</h1>
+					<p>By Valentin TRAN</p>
+				</header>
+				<footer>
+					<a href="#form" class="button style2 scrolly-middle">Estimate a rental now</a>
+				</footer>
+			</section>
+
+
+		<!-- Estimate -->
+		<section id="form">
+			<article class="container box style3">
+				<header>
+					<h2>Estimate your rental</h2>
+					<p>Please fill this form</p>
+				</header>
+				<form method="post" action="javascript:void(0);">
+					<div id="car" class="row 50%">
+						<div class="4u 12u$(mobile)"><input class="model" type="text" placeholder="Car model"/></div>
+						<div class="4u 12u$(mobile)"><input class="price-by-day" type="number" placeholder="Price by day"/></div>
+						<div class="4u$ 12u$(mobile)"><input class="price-by-km" type="number" placeholder="Price by km"/></div>
+					</div>
+                    <div id="rental" class="row 50%">
+                        <div class="4u 12u$(mobile)"><input class="begin" type="date" placeholder="Rental begin date"/></div>
+                        <div class="4u 12u$(mobile)"><input class="end" type="date" placeholder="Rental end date"/></div>
+                        <div class="4u 12u$(mobile)"><input class="distance" type="number" placeholder="Distance in km"/></div>
+                        <div class="6u 12u$"><input class="option" type="checkbox" placeholder="Deductible option"/></div>
+                    </div>
+                    <button id="compute">Compute</button>
+                    <div id="actors"></div>
+				</form>
+			</article>
+		</section>
+
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				<!--<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+			</ul>
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; Drivy. All rights reserved.</li><li>Design: Valentin TRAN</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+            <script id="template" type="x-tmpl-mustache">
+              {{#actors}}
+                <div class="actor">
+                  <span>{{who}}</span>
+                  <span>{{type}}</span>
+                  <span>{{amount}}</span>
+                </div>
+              {{/actors}}
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+            <script src="assets/js/drivy.js"></script>
+            <script src="assets/js/index.js"></script>
+	</body>
 </html>
